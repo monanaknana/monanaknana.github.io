@@ -17,22 +17,22 @@ C:\Program Files (x86)\VMware\VMware Workstation
 
 Then look for .exe file name vmnetcfg.exe:
 
-![image.png](/assets/img/posts/ping_not_worksimage.png)
+![image.png](/assets/img/posts/ping_not_works/ping_not_worksimage.png)
 
 After that right click that choose run as adminstrator:
 
-![image.png](/assets/img/posts/image-01.png)
+![image.png](/assets/img/posts/ping_not_works/image-01.png)
 
 Next u see by default the external connection for type Bridged is automatic.
 
-![image.png](/assets/img/posts/image-02.png)
+![image.png](/assets/img/posts/ping_not_works/image-02.png)
 
 Than change it from automatic to your own virtual ethernet adapter, for me is Intel(R) Wi-Fi 6 AX203:
 
-![image.png](/assets/img/posts/image-03.png)
+![image.png](/assets/img/posts/ping_not_works/image-03.png)
 
 Than click at Apply and Ok 
 
 Then you get the result will:
 
-![image.png](/assets/img/posts/image-04.png)
+![image.png](/assets/img/posts/ping_not_works/image-04.png)
