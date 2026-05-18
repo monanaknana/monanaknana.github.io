@@ -17,7 +17,7 @@ C:\Program Files (x86)\VMware\VMware Workstation
 
 Then look for .exe file name vmnetcfg.exe:
 
-![image.png](/assets/img/posts/ping_not_works/ping_not_worksimage.png)
+![image.png](/assets/img/posts/ping_not_works/image.png)
 
 After that right click that choose run as adminstrator:
 
