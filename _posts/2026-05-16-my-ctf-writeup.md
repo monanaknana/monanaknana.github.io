@@ -1,8 +1,12 @@
 ---
-title: "My CTF Writeup"
+title: "How to solve if ping is unreachable in Linux"
 date: 2026-05-16
-categories: [CTF]
-tags: [lfi, web]
+categories: [Linux]
+tags: [vmware, networking]
+
+image:
+  path: /assets/img/posts/ping/ping.png
+  alt: Fix ping unreachable in Kali Linux
 ---
 
 # How to solve if ping is unreachable in linux
