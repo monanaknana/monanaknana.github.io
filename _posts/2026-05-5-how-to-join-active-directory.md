@@ -1,6 +1,6 @@
 ---
 title: "How To Join Windows Server to Active Directory"
-date: 2026-05-18
+date: 2026-05-5
 categories: [Windows]
 tags: [active-directory, windows-server]
 

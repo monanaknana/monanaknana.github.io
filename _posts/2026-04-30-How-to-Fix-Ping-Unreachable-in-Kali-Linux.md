@@ -1,6 +1,6 @@
 ---
 title: "How to solve if ping is unreachable in Linux"
-date: 2026-05-16
+date: 2026-04-30
 categories: [Linux]
 tags: [vmware, networking]
 
