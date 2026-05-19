@@ -20,7 +20,7 @@ This guide shows how to connect a **Windows machine to Active Directory (AD)**. 
 
 # STEPS
 
-1. Open Network Settings
+### 1. Open Network Settings
 
 Go to:
 
