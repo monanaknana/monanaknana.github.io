@@ -1,8 +1,8 @@
 ---
-title: "Atan: Garage Leak CTF Writeup Guide"
-date: 2026-05-19 10:30:00 +0800
+title: "Web - Atan: Garage Leak CTF Writeup Guide"
+date: 2026-05-17
 categories: [CTF, Web]
-tags: [lfi, file-inclusion, web-security, atur-kreatif]
+tags: [lfi, file-inclusion, web-security, atur-kreatif26]
 
 image:
   path: /assets/img/posts/atan/banner.png
@@ -13,7 +13,7 @@ toc: true
 comments: true
 ---
 
-# Atur Kreatif’26 Web - Atan: Garage Leak
+## Atur Kreatif’26 Web - Atan: Garage Leak
 
 ---
 
@@ -21,7 +21,7 @@ This is the overview step by step to solve this question. This challenge involve
 
 ---
 
-# **Challenge Description**
+## **Challenge Description**
 
 > ATAN EMPIRE deployed a new internal management portal for their automotive workshop.
 > 
@@ -34,9 +34,9 @@ This is the overview step by step to solve this question. This challenge involve
 
 ---
 
-# Atan: Garage Leak Ctf Writeup Guide
+## Atan: Garage Leak Ctf Writeup Guide
 
-# Step 1 - Explore the Website Normally
+### Step 1 - Explore the Website Normally
 
 The first thing when solving a web challenge is **not attacking immediately**.
 
@@ -53,7 +53,7 @@ Because many CTF challenges leave hints in hidden comments, source code, or page
 
 ---
 
-# Step 2 - Inspect the Website
+### Step 2 - Inspect the Website
 
 Open browser Developer Tools:
 
@@ -73,7 +73,7 @@ Finding contact.php
 
 ---
 
-# Step 3 - Observe URL Changes
+### Step 3 - Observe URL Changes
 
 After moving around the website, observe the URL:
 
@@ -91,7 +91,7 @@ Because applications often use it to dynamically load files.
 
 ---
 
-# Step 4 - Test Unexpected Input
+### Step 4 - Test Unexpected Input
 
 Before trying complicated payloads, beginners should test random values.
 
@@ -117,7 +117,7 @@ This are the result after we change:
 
 ---
 
-# Step 5 - Test for File Inclusion Behavior
+### Step 5 - Test for File Inclusion Behavior
 
 Since `page` appears to load files, we can try giving an unexpected path to understand how filtering behaves.
 
@@ -135,7 +135,7 @@ The result will get this.
 
 ---
 
-# Step 6 - Follow the Hidden Clues 1
+### Step 6 - Follow the Hidden Clues 1
 
 Earlier we saw:
 
@@ -195,7 +195,7 @@ T verify encoded values before final deployment
 
 ---
 
-# Step 7 - Follow the Hidden Clues 2
+### Step 7 - Follow the Hidden Clues 2
 
 Since backup files were mentioned several times, test:
 
@@ -225,7 +225,7 @@ Now we gain three important clues:
 
 ---
 
-# Step 8 - Checking Common CTF File Names
+### Step 8 - Checking Common CTF File Names
 
 At this stage, CTF players often test common filenames because challenge authors sometimes leave decoys or accidentally exposed files:
 
@@ -265,7 +265,7 @@ These hints suggest the challenge contains intentionally misleading files. Inste
 
 ---
 
-# Step 9 - Access Secret Archive
+### Step 9 - Access Secret Archive
 
 Earlier we accessed:
 
@@ -312,6 +312,8 @@ QUsyNntMZjFfbjB0X3M0bj10MXoxbmdfMW5wdXR9
 ```
 
 Decode Base64 a second time:
+
+### Flag
 
 ```jsx
 AK26{Lf1_n0t_s4n=t1z1ng_1nput}
