@@ -1,5 +1,5 @@
 ---
-icon: fas fa-info-circle
+icon: fa-etch fa-solid fa-user
 order: 4
 ---
 
