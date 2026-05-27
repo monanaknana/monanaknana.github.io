@@ -4,134 +4,131 @@ layout: page
 ---
 
 {% include lang.html %}
-
 {% assign sort_categories = site.categories | sort %}
 
 <style>
-  .cat-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1.2rem;
-    margin-top: 1.5rem;
-  }
+.cat-grid{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+gap:1.2rem;
+margin-top:1.5rem;
+}
 
-  .cat-card {
-    background: #f9f9f9;
-    border: 1.5px solid #d4f000;
-    border-radius: 14px;
-    padding: 1.2rem 1rem;
-    text-decoration: none;
-    transition: transform 0.15s, box-shadow 0.15s;
-  }
+.cat-card{
+background:#f9f9f9;
+border:1.5px solid #d4f000;
+border-radius:14px;
+padding:1.2rem 1rem;
+text-decoration:none;
+transition:transform .15s,box-shadow .15s;
+}
 
-  .cat-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 20px rgba(150,200,0,.25);
-    border-color: #CCFF00;
-  }
+.cat-card:hover{
+transform:translateY(-4px);
+box-shadow:0 6px 20px rgba(150,200,0,.25);
+border-color:#CCFF00;
+}
 
-  .cat-card .cat-icon {
-    font-size: 1.8rem;
-    color: #005500;
-    margin-bottom: .6rem;
-  }
+.cat-icon{
+font-size:1.8rem;
+color:#005500;
+margin-bottom:.6rem;
+}
 
-  .cat-card .cat-name {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #1a2a00;
-    margin-bottom: .3rem;
-  }
+.cat-name{
+font-size:1rem;
+font-weight:700;
+color:#1a2a00;
+margin-bottom:.3rem;
+}
 
-  .cat-card .cat-count {
-    font-size: .8rem;
-    color: #3a5a00;
-  }
+.cat-count{
+font-size:.8rem;
+color:#3a5a00;
+}
 
-  .sub-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px,1fr));
-    gap: .8rem;
-    margin-top: .8rem;
-  }
+.sub-grid{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
+gap:.8rem;
+margin-top:.8rem;
+}
 
-  .sub-card {
-    background: #efffcc;
-    border:1px solid #b8e000;
-    border-radius:10px;
-    padding:.7rem .9rem;
-    text-decoration:none;
-    transition:transform .15s;
-  }
+.sub-card{
+background:#efffcc;
+border:1px solid #b8e000;
+border-radius:10px;
+padding:.7rem .9rem;
+text-decoration:none;
+transition:transform .15s;
+}
 
-  .sub-card:hover {
-    transform:translateY(-2px);
-    background:#CCFF00;
-  }
+.sub-card:hover{
+transform:translateY(-2px);
+background:#CCFF00;
+}
 
-  .sub-card .sub-name {
-    font-size:.85rem;
-    font-weight:600;
-    color:#1a2a00;
-  }
+.sub-name{
+font-size:.85rem;
+font-weight:600;
+color:#1a2a00;
+}
 
-  .sub-card .sub-count {
-    font-size:.75rem;
-    color:#3a5a00;
-  }
+.sub-count{
+font-size:.75rem;
+color:#3a5a00;
+}
 </style>
 
 <div class="cat-grid">
 
 {% for category in sort_categories %}
 
-  {% assign category_name = category | first %}
-  {% assign posts_of_category = category | last %}
-  {% assign first_post = posts_of_category | first %}
+{% assign category_name = category | first %}
+{% assign posts_of_category = category | last %}
+{% assign first_post = posts_of_category | first %}
 
-  {% if category_name == first_post.categories[0] %}
+{% if category_name == first_post.categories[0] %}
 
-    {% assign sub_string = "" %}
+{% assign sub_string="" %}
 
-    {% for post in posts_of_category %}
-      {% assign second_category = post.categories[1] %}
+{% for post in posts_of_category %}
 
-      {% if second_category %}
-        {% unless sub_string contains second_category %}
-          {% capture sub_string %}
-{{ sub_string }}|{{ second_category }}
-          {% endcapture %}
-        {% endunless %}
-      {% endif %}
+{% assign second_category=post.categories[1] %}
 
-    {% endfor %}
+{% if second_category %}
+{% unless sub_string contains second_category %}
 
-    {% assign sub_categories = sub_string | split:"|" | uniq | sort %}
+{% capture sub_string %}{{sub_string}}|{{second_category}}{% endcapture %}
 
-    {% assign sub_categories_size = sub_categories | size %}
-    {% assign top_posts_size = site.categories[category_name] | size %}
+{% endunless %}
+{% endif %}
 
-    {% capture _category_url %}
-      /categories/{{ category_name | slugify | url_encode }}/
-    {% endcapture %}
+{% endfor %}
+
+{% assign sub_categories=sub_string | split:"|" | uniq | sort %}
+{% assign sub_categories_size=sub_categories | size %}
+{% assign top_posts_size=site.categories[category_name] | size %}
+
+{% capture _category_url %}/categories/{{category_name | slugify | url_encode}}/{% endcapture %}
 
 <div style="display:flex;flex-direction:column;gap:.8rem;">
 
-<a href="{{ _category_url | relative_url }}" class="cat-card">
+<a href="{{_category_url | strip | relative_url}}" class="cat-card">
 
 <div class="cat-icon">
 <i class="far fa-folder{% if sub_categories_size > 1 %}-open{% endif %} fa-fw"></i>
 </div>
 
 <div class="cat-name">
-{{ category_name }}
+{{category_name}}
 </div>
 
 <div class="cat-count">
 {% if sub_categories_size > 1 %}
-{{ sub_categories_size | minus:1 }} subcategories ·
+{{sub_categories_size | minus:1}} subcategories ·
 {% endif %}
-{{ top_posts_size }} posts
+{{top_posts_size}} posts
 </div>
 
 </a>
@@ -141,30 +138,27 @@ layout: page
 <div class="sub-grid">
 
 {% for sub_category in sub_categories %}
+{% unless sub_category=="" %}
 
-{% unless sub_category == "" %}
-
-{% assign posts_size = site.categories[sub_category] %}
+{% assign posts_size=site.categories[sub_category] %}
 
 {% if posts_size %}
-{% assign posts_size = posts_size | size %}
+{% assign posts_size=posts_size | size %}
 {% else %}
-{% assign posts_size = 0 %}
+{% assign posts_size=0 %}
 {% endif %}
 
-{% capture _sub_ctg_url %}
- /categories/{{ sub_category | slugify | url_encode }}/
-{% endcapture %}
+{% capture _sub_ctg_url %}/categories/{{sub_category | slugify | url_encode}}/{% endcapture %}
 
-<a href="{{ _sub_ctg_url | relative_url }}" class="sub-card">
+<a href="{{_sub_ctg_url | strip | relative_url}}" class="sub-card">
 
 <div class="sub-name">
 <i class="far fa-folder fa-fw"></i>
-{{ sub_category }}
+{{sub_category}}
 </div>
 
 <div class="sub-count">
-{{ posts_size }} posts
+{{posts_size}} posts
 </div>
 
 </a>
@@ -173,6 +167,7 @@ layout: page
 {% endfor %}
 
 </div>
+
 {% endif %}
 
 </div>
