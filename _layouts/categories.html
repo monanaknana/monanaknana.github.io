@@ -1,86 +1,11 @@
 ---
 layout: page
-# All the Categories of posts
+title: Categories
 ---
 
-{% include lang.html %}
 {% assign sort_categories = site.categories | sort %}
 
-<style>
-.cat-grid{
-display:grid;
-grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
-gap:1.2rem;
-margin-top:1.5rem;
-}
-
-.cat-card{
-background:#f9f9f9;
-border:1.5px solid #d4f000;
-border-radius:14px;
-padding:1.2rem 1rem;
-text-decoration:none;
-transition:transform .15s,box-shadow .15s;
-}
-
-.cat-card:hover{
-transform:translateY(-4px);
-box-shadow:0 6px 20px rgba(150,200,0,.25);
-border-color:#CCFF00;
-}
-
-.cat-icon{
-font-size:1.8rem;
-color:#005500;
-margin-bottom:.6rem;
-}
-
-.cat-name{
-font-size:1rem;
-font-weight:700;
-color:#1a2a00;
-margin-bottom:.3rem;
-}
-
-.cat-count{
-font-size:.8rem;
-color:#3a5a00;
-}
-
-.sub-grid{
-display:grid;
-grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
-gap:.8rem;
-margin-top:.8rem;
-}
-
-.sub-card{
-background:#efffcc;
-border:1px solid #b8e000;
-border-radius:10px;
-padding:.7rem .9rem;
-text-decoration:none;
-transition:transform .15s;
-}
-
-.sub-card:hover{
-transform:translateY(-2px);
-background:#CCFF00;
-}
-
-.sub-name{
-font-size:.85rem;
-font-weight:600;
-color:#1a2a00;
-}
-
-.sub-count{
-font-size:.75rem;
-color:#3a5a00;
-}
-</style>
-
-<div class="cat-grid">
+<div class="my-cat-grid">
 
 {% for category in sort_categories %}
 
@@ -93,14 +18,11 @@ color:#3a5a00;
 {% assign sub_string="" %}
 
 {% for post in posts_of_category %}
-
 {% assign second_category=post.categories[1] %}
 
 {% if second_category %}
 {% unless sub_string contains second_category %}
-
 {% capture sub_string %}{{sub_string}}|{{second_category}}{% endcapture %}
-
 {% endunless %}
 {% endif %}
 
@@ -110,67 +32,21 @@ color:#3a5a00;
 {% assign sub_categories_size=sub_categories | size %}
 {% assign top_posts_size=site.categories[category_name] | size %}
 
-{% capture _category_url %}/categories/{{category_name | slugify | url_encode}}/{% endcapture %}
+<a href="/categories/{{category_name | slugify}}/" class="my-cat-card">
 
-<div style="display:flex;flex-direction:column;gap:.8rem;">
-
-<a href="{{_category_url | strip | relative_url}}" class="cat-card">
-
-<div class="cat-icon">
-<i class="far fa-folder{% if sub_categories_size > 1 %}-open{% endif %} fa-fw"></i>
+<div class="my-cat-icon">
+<i class="far fa-folder fa-fw"></i>
 </div>
 
-<div class="cat-name">
+<div class="my-cat-name">
 {{category_name}}
 </div>
 
-<div class="cat-count">
-{% if sub_categories_size > 1 %}
-{{sub_categories_size | minus:1}} subcategories ·
-{% endif %}
+<div class="my-cat-count">
 {{top_posts_size}} posts
 </div>
 
 </a>
-
-{% if sub_categories_size > 1 %}
-
-<div class="sub-grid">
-
-{% for sub_category in sub_categories %}
-{% unless sub_category=="" %}
-
-{% assign posts_size=site.categories[sub_category] %}
-
-{% if posts_size %}
-{% assign posts_size=posts_size | size %}
-{% else %}
-{% assign posts_size=0 %}
-{% endif %}
-
-{% capture _sub_ctg_url %}/categories/{{sub_category | slugify | url_encode}}/{% endcapture %}
-
-<a href="{{_sub_ctg_url | strip | relative_url}}" class="sub-card">
-
-<div class="sub-name">
-<i class="far fa-folder fa-fw"></i>
-{{sub_category}}
-</div>
-
-<div class="sub-count">
-{{posts_size}} posts
-</div>
-
-</a>
-
-{% endunless %}
-{% endfor %}
-
-</div>
-
-{% endif %}
-
-</div>
 
 {% endif %}
 {% endfor %}

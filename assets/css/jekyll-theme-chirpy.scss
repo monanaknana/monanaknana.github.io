@@ -64,3 +64,72 @@
   display: none !important;
   background: none !important;
 }
+
+/* Kill sidebar bullets */
+#sidebar ul,
+#sidebar ol {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+
+/* Reset sidebar item spacing */
+#sidebar li {
+  list-style: none !important;
+  margin-left: 0 !important;
+}
+
+/* Fix menu alignment */
+#sidebar .nav-item {
+  display: block !important;
+}
+
+/* Restore Chirpy post card layout */
+#post-list {
+  display: block !important;
+}
+
+.post-preview {
+  display: flex !important;
+  align-items: stretch;
+}
+
+/* categories page only */
+
+.my-cat-grid{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+gap:1rem;
+margin-top:1rem;
+}
+
+.my-cat-card{
+display:block;
+padding:1rem;
+background:#f9f9f9;
+border:1px solid #d4f000;
+border-radius:14px;
+text-decoration:none;
+transition:.2s;
+}
+
+.my-cat-card:hover{
+transform:translateY(-4px);
+border-color:#CCFF00;
+}
+
+.my-cat-name{
+font-weight:700;
+color:#1a2a00;
+}
+
+.my-cat-count{
+font-size:.8rem;
+color:#3a5a00;
+}
+
+.my-cat-icon{
+font-size:1.5rem;
+margin-bottom:.5rem;
+color:#005500;
+}
