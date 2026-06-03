@@ -1,5 +1,5 @@
 ---
-title: "PortSwigger - Authentication Lab 2 - 2FA simple bypass"
+title: "PortSwigger - Authentication Lab 3 - Password reset broken logic"
 date: 2026-03-01
 categories: [PortSwigger, Authentication]
 tags: [portswigger, authentication, burp-suite, username-enumeration, brute-force]
@@ -97,7 +97,7 @@ new-password-2=lili
 - Send the request.
 - The application processes the request successfully and updates Carlos's password.
 
-![image.png](e3d8bb20-650d-4f15-b1df-422ac1c2ca2a.png)
+![image.png](/assets/img/posts/auth3/image6.png)
 
 ## Step 5: Access Carlos's Account
 
@@ -111,6 +111,6 @@ Password: lili
 
 - Navigate to **My Account**.
 
-![image.png](image%204.png)
+![image.png](/assets/img/posts/auth3/image4.png)
 
-![image.png](image%205.png)
+![image.png](/assets/img/posts/auth3/image5.png)
