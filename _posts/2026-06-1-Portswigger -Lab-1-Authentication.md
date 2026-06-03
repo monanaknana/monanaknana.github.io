@@ -1,5 +1,5 @@
 ---
-title: "PortSwigger Lab: Username Enumeration via Different Responses"
+title: "PortSwigger Lab 1 - Authentication - Username Enumeration via Different Responses"
 date: 2026-3-1
 categories: [PortSwigger, Authentication]
 tags: [portswigger, authentication, burp-suite, username-enumeration, brute-force]
@@ -7,7 +7,6 @@ tags: [portswigger, authentication, burp-suite, username-enumeration, brute-forc
 image:
 path: /assets/img/posts/auth1/banner.png
 alt: PortSwigger Authentication Lab
-
 ---
 
 # Portswigger: Lab 1 - Authentication
