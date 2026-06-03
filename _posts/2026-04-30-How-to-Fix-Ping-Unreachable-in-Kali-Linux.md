@@ -7,6 +7,10 @@ tags: [vmware, networking]
 image:
   path: /assets/img/posts/ping/ping.png
   alt: Fix ping unreachable in Kali Linux
+
+pin: true
+toc: true
+comments: true
 ---
 
 # How to Fix Ping Unreachable in Kali Linux (VMware Workstation)
