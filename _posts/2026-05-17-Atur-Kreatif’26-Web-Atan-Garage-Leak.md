@@ -8,7 +8,6 @@ image:
   path: /assets/img/posts/atan/banner.png
   alt: Atan Garage Leak LFI CTF Challenge
 
-pin: true
 toc: true
 comments: true
 ---
