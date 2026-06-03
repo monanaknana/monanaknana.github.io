@@ -59,34 +59,7 @@
   border: none !important;
 }
 
-/* Kill Chirpy pseudo-elements on active/all nav links */
-#sidebar .nav-link::before,
-#sidebar .nav-link::after,
-#sidebar .nav-item.active .nav-link::before,
-#sidebar .nav-item.active .nav-link::after {
-  content: none !important;
-  display: none !important;
-  background: none !important;
-}
 
-/* Kill sidebar bullets */
-#sidebar ul,
-#sidebar ol {
-  list-style: none !important;
-  padding-left: 0 !important;
-  margin-left: 0 !important;
-}
-
-/* Reset sidebar item spacing */
-#sidebar li {
-  list-style: none !important;
-  margin-left: 0 !important;
-}
-
-/* Fix menu alignment */
-#sidebar .nav-item {
-  display: block !important;
-}
 
 /* categories page only */
 
