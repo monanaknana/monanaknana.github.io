@@ -16,7 +16,7 @@ timezone:
 
 title: monatraee
 
-tagline: Giving back to society # it will display as the subtitle
+tagline: Documenting what I learn in defensive security so others can learn too. # it will display as the subtitle
 
 description: This is the place where I share useful notes and solutions I discovered during challenging times, so others facing the same problems can learn and benefit from them. :) Happy reading!
 
@@ -85,7 +85,7 @@ pageviews:
 #     light — Use the light color scheme
 #     dark — Use the dark color scheme
 #
-theme_mode: light
+theme_mode: # [light | dark]
 
 # The CDN endpoint for media resources.
 # Notice that once it is assigned, the CDN url
