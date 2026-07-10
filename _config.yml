@@ -16,7 +16,7 @@ timezone:
 
 title: monatraee
 
-tagline: Documenting what I learn in offensive security so others can learn too. # it will display as the subtitle
+tagline: A collection of cybersecurity write-ups, projects, and learning notes.Embekkkk # it will display as the subtitle
 
 description: This is the place where I share useful notes and solutions I discovered during challenging times, so others facing the same problems can learn and benefit from them. :) Happy reading!
 
@@ -37,9 +37,7 @@ social:
   links:
     # The first element serves as the copyright owner's link
     - https://github.com/monanaknana # change to your GitHub homepage
-    # Uncomment below to add more social links
-    # - https://www.facebook.com/username
-    # - https://www.linkedin.com/in/username
+    - https://www.linkedin.com/in/nurul-izzah-jamadi-75a48b27b
 
 # Site Verification Settings
 webmaster_verifications:
