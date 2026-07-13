@@ -147,7 +147,7 @@ Answer: ftp.exe
 
 ---
 
-## Q5: Malware executed multiple same commands at a time, what is the first command executed?
+### Q5: Malware executed multiple same commands at a time, what is the first command executed?
 
 After attacker change the environment, the first command executed are `ipconfig`.
 
@@ -162,7 +162,7 @@ Answer: ipconfig
 
 ---
 
-## Q6: Looking at the dependency events around the malware, can you able to figure out the language, the malware is written
+### Q6: Looking at the dependency events around the malware, can you able to figure out the language, the malware is written
 
 Now I change the query to find the language.
 
