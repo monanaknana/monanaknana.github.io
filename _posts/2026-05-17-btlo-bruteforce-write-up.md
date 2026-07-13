@@ -22,6 +22,7 @@ comments: true
 
 > **Challenge:** Bruteforce  
 > **Platform:** Blue Team Labs Online (BTLO)  
+> **Difficulty:** Medium
 > **Category:** Log Analysis / Windows Security Events / Splunk
 
 ---
