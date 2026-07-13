@@ -17,7 +17,7 @@ image:
 toc: true
 comments: true
 ---
-# BTLO - Secure Shell Write up
+## BTLO - Secure Shell Write up
 
 > **Challenge:** Bruteforce  
 > **Platform:** Blue Team Labs Online (BTLO)  
@@ -30,29 +30,29 @@ we'll investigate an SSH log file to uncover suspicious login activity and answe
 
 ---
 
-# **Scenario**
+## **Scenario**
 
 Hey! We had a SSH service on a system and noticed unusual change in size of the log file. Don’t panic, it was the new IT guys’ daughter who said she was able to break into the system. I had given her permission to test some of these services. I am giving you the log file, can you solve the following queries?
 
 ---
 
-# Setup
+## Setup
 
-## Tools used
+### Tools used
 
 - flareVM
 - splunk
 - IPabuse
 
-## Files provided
+### Files provided
 
 ![image.png](/assets/img/posts/btlo-secureshell/image.png)
 
 ---
 
-# Walkthrough
+## Walkthrough
 
-## Q1: Is it an internal or external attack, what is the attacker IP?
+### Q1: Is it an internal or external attack, what is the attacker IP?
 
 Let's first find out where the attack is coming from. 
 
@@ -80,7 +80,7 @@ Answer: **external:192.168.1.17**
 
 </aside>
 
-## Q2: How many valid accounts did the attacker find, and what are the usernames?
+### Q2: How many valid accounts did the attacker find, and what are the usernames?
 
 Now that we've identified the attacker, let's see if they managed to compromise any accounts. 
 
@@ -105,7 +105,7 @@ Answer: **sophia**
 
 ---
 
-## Q3: How many times did the attacker login to these accounts?
+### Q3: How many times did the attacker login to these accounts?
 
 Now let's find out how many times the attacker successfully logged into the compromised account. 
 
@@ -128,7 +128,7 @@ Answer: **2**
 
 ---
 
-## Q4: When was the first request from the attacker recorded?
+### Q4: When was the first request from the attacker recorded?
 
 Every attack starts somewhere. Let's identify the earliest request made by the attacker to determine when the activity first began.
 
@@ -158,7 +158,7 @@ Answer: **2021-04-29 23:52:25.989**
 
 ---
 
-## Q5: What is the log level for the log file?
+### Q5: What is the log level for the log file?
 
 ```jsx
 host="BTLO" index="btlo_secure_shell_hard"
@@ -195,7 +195,7 @@ Answer: **debug3**
 
 ---
 
-## Q6: Where is the log file located in Windows?
+### Q6: Where is the log file located in Windows?
 
 If you're wondering where Windows stores SSH logs by default, they're located under the **ProgramData** directory.
 
@@ -208,7 +208,7 @@ Answer: **C:\ProgramData\ssh\logs\sshd.log**
 
 ---
 
-# 🎉 That's it - you've completed Secure Shell!
+## 🎉 That's it - you've completed Secure Shell!
 
 ![image.png](/assets/img/posts/btlo-secureshell/image8.png)
 

@@ -18,7 +18,7 @@ toc: true
 comments: true
 ---
 
-# BTLO - Bruteforce Write Up
+## BTLO - Bruteforce Write Up
 
 > **Challenge:** Bruteforce  
 > **Platform:** Blue Team Labs Online (BTLO)  
@@ -31,7 +31,7 @@ Hi gentle readers, I analyzed the provided log file and answered all the related
 
 ---
 
-# **Scenario**
+## **Scenario**
 
 **Can you analyze logs from an attempted RDP bruteforce attack?**
 
@@ -41,23 +41,23 @@ There are a number of different ways to approach the analysis of these logs! Con
 
 ---
 
-# Setup
+## Setup
 
-## Tools used
+### Tools used
 
 - flareVM
 - splunk - load .cvs file
 - ipabuse - ip cheaking
 
-## Files provided
+### Files provided
 
 ![image.png](/assets/img/posts/btlo-bruteforce/image.png)
 
 ---
 
-# Walkthrough
+## Walkthrough
 
-## Q1: How many Audit Failure events are there?
+### Q1: How many Audit Failure events are there?
 
 Let's start by counting all Windows Security **Event ID 4625** logs, which represent failed logon attempts. 
 
@@ -77,7 +77,7 @@ Answer: **3103**
 
 </aside>
 
-## Q2: What is the username of the local account that is being targeted?
+### Q2: What is the username of the local account that is being targeted?
 
 Now that we know there was a brute-force attack, the next step is identifying which account the attacker was trying to access. Looking at the Event 4625 logs, we can find the username in the **TargetUserName** field. the question provide .envt file - you can open it and it will display like below:
 
@@ -92,7 +92,7 @@ Answer: **administrator**
 
 ---
 
-## Q3: What is the failure reason related to the Audit Failure logs?
+### Q3: What is the failure reason related to the Audit Failure logs?
 
 Let's inspect one of the failed logon events. The **Failure Reason** field explains why Windows rejected the authentication request.
 
@@ -107,7 +107,7 @@ Answer: **Unknown user name or bad password.**
 
 ---
 
-## Q4: What is the Windows Event ID associated with these logon failures?
+### Q4: What is the Windows Event ID associated with these logon failures?
 
 An **Event ID** is a unique number used to identify a Windows event. These are some of event ID, to get you an overview:
 
@@ -132,7 +132,7 @@ Answer: **4625**
 
 ---
 
-## Q5: What is the source IP conducting this attack?
+### Q5: What is the source IP conducting this attack?
 
 Finally, let's check which source ports were used during the attack. We can extract the port numbers from the logs and use Splunk to find both the minimum and maximum values.
 
@@ -155,7 +155,7 @@ Answer: **113.161.192.227**
 
 ---
 
-## Q6: What country is this IP address associated with?
+### Q6: What country is this IP address associated with?
 
 After identifying the attacker's IP address, we can investigate it using an IP reputation service such as IPAbuse, AbuseIPDB, or Virustotal to determine its geographic location. 
 
@@ -170,7 +170,7 @@ Answer: **Viet Nam**
 
 </aside>
 
-## Q6: What is the range of source ports that were used by the attacker to make these login requests?
+### Q6: What is the range of source ports that were used by the attacker to make these login requests?
 
 Finally, let's check which source ports were used during the attack. 
 
@@ -193,7 +193,7 @@ Answer: 49162-65534
 
 ---
 
-# 🎉 That's it - you've completed **Bruteforce**!
+## 🎉 That's it - you've completed **Bruteforce**!
 
 ![image.png](/assets/img/posts/btlo-bruteforce/image8.png)
 

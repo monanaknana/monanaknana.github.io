@@ -20,7 +20,7 @@ toc: true
 comments: true
 ---
 
-# BTLO - Log Analysis: Sysmon
+## BTLO - Log Analysis: Sysmon
 
 
 > **Platform:** Blue Team Labs Online (BTLO)
@@ -113,7 +113,7 @@ Answer: Invoke-WebRequest, 6666
 
 ---
 
-## Q3: What is the name of the environment variable set by the attacker?
+### Q3: What is the name of the environment variable set by the attacker?
 
 We can reuse the previous query. We can see at time `2021-05-07 12:22:39.500`.
 
@@ -215,7 +215,6 @@ Answer: 9898
 
 ---
 
----
 
 ## 🎉 That's it - you've completed Log Analysis: Sysmon!
 
